@@ -64,7 +64,7 @@ export class SideMenuComponent implements OnInit, OnDestroy {
 
   onMenuClicked(path: string) {
     this.menuService.toggleMenu(false)
-    this.router.navigate(['profile'])
+    this.router.navigate([path])
   }
 
 }
