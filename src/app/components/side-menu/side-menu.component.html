@@ -1,0 +1,15 @@
+<ng-container *ngIf="ui.showMenu">
+    <div class="d-flex" style="height: 100%; background-color: rgba(44, 44, 44, 0.176);">
+        <div class="shadow-border flex-column d-flex" style="width: 20em; flex: 1; height: 100%; position: absolute; overflow: auto; background-color: white;">
+            <ng-container *ngFor="let i of [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]">
+                <ng-container *ngTemplateOutlet="menuButton"></ng-container>
+            </ng-container>
+        </div>
+    </div>
+</ng-container>
+
+<ng-template #menuButton>
+    <div class="shadow-border" style="flex: 1; padding: 1em;">
+        <span>Board of Directors</span>
+    </div>
+</ng-template>

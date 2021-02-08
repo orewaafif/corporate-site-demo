@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { SideMenuModule } from './components/side-menu/side-menu.module';
+import { HeaderModule } from './components/header/header.module';
+import { SideMenuService } from './components/side-menu.service';
 
 @NgModule({
   declarations: [
@@ -13,9 +16,13 @@ import { environment } from '../environments/environment';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SideMenuModule,
+    HeaderModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [
+    SideMenuService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
