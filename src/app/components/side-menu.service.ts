@@ -12,8 +12,12 @@ export class SideMenuService {
 
   constructor() { }
 
-  toggleMenu() {
-    this.showMenu = !this.showMenu
+  toggleMenu(force?: boolean) {
+    if (force === undefined)
+      this.showMenu = !this.showMenu
+    else
+      this.showMenu = force
+
     this.showMenuChange$.next(this.showMenu)
   }
 }

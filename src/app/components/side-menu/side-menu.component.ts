@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { SideMenuService } from '../side-menu.service';
@@ -14,10 +15,38 @@ export class SideMenuComponent implements OnInit, OnDestroy {
     showMenu: false
   }
 
+  menus = [
+    {
+      path: 'home',
+      name: 'Home'
+    },
+    {
+      path: 'profile',
+      name: 'Corporate Profile'
+    },
+    {
+      path: 'boards',
+      name: 'Board of Directors'
+    },
+    {
+      path: 'core-visions',
+      name: 'Vision & Core values'
+    },
+    {
+      path: 'code-conduct',
+      name: 'Code of Conduct'
+    },
+    {
+      path: 'managements',
+      name: 'Management Team'
+    },
+  ]
+
   unsub$ = new Subject()
 
   constructor(
-    private menuService: SideMenuService
+    private menuService: SideMenuService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -31,6 +60,11 @@ export class SideMenuComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.unsub$.next()
     this.unsub$.unsubscribe()
+  }
+
+  onMenuClicked(path: string) {
+    this.menuService.toggleMenu(false)
+    this.router.navigate(['profile'])
   }
 
 }
