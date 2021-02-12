@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-profile-view',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-view.component.scss']
 })
 export class ProfileViewComponent implements OnInit {
+
+  @Input('profileUrl') profileUrl: string = 'george2.jpg'
 
   constructor() { }
 
