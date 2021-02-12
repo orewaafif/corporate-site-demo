@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -46,15 +46,24 @@ export class SideMenuComponent implements OnInit, OnDestroy {
 
   constructor(
     private menuService: SideMenuService,
+    private compEle: ElementRef,
+    private renderer: Renderer2,
     private router: Router
   ) { }
 
   ngOnInit(): void {
     this.ui.showMenu = this.menuService.showMenu
+    this.showEle(this.ui.showMenu)
 
     this.menuService.showMenuChange$.pipe(takeUntil(this.unsub$.asObservable())).subscribe(status => {
       this.ui.showMenu = status
+      this.showEle(this.ui.showMenu)
     })
+  }
+
+  showEle(state: boolean) {
+    if (!state) this.renderer.setStyle(this.compEle.nativeElement, 'display', 'none')
+    else this.renderer.removeStyle(this.compEle.nativeElement, 'display')
   }
 
   ngOnDestroy(): void {
