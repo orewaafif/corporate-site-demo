@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SideMenuService } from '../side-menu.service';
+import { SideMenuService } from '../side-menu/side-menu.service';
 
 @Component({
   selector: 'app-header',

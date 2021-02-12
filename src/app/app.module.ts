@@ -7,7 +7,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SideMenuModule } from './components/side-menu/side-menu.module';
 import { HeaderModule } from './components/header/header.module';
-import { SideMenuService } from './components/side-menu.service';
+import { SideMenuService } from './components/side-menu/side-menu.service';
 
 @NgModule({
   declarations: [

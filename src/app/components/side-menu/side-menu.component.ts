@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { SideMenuService } from '../side-menu.service';
+import { SideMenuService } from './side-menu.service';
 
 @Component({
   selector: 'app-side-menu',
