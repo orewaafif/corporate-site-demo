@@ -1,1 +1,6 @@
-<p>directors works!</p>
+<div class="shadow-border d-flex flex-column" style="overflow: auto; height: 1px; flex: 1;">
+    <ng-container *ngFor="let profile of profiles">
+        <app-profile-view [profileUrl]="'directors/' + profile.fileName"></app-profile-view>
+        <!-- <app-profile-view [profileUrl]="profile.fileName"></app-profile-view> -->
+    </ng-container>
+</div>
