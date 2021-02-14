@@ -1,0 +1,11 @@
+<div class="row shadow-border" style="flex: 1;">
+    <div class="col-sm-4 shadow-border d-flex flex-column">
+        <ng-container *ngFor="let i of sideMenu">
+            <button class="btn btn-light">{{i.name}}</button>
+        </ng-container>
+    </div>
+    <div class="col-sm-8 shadow-border">
+        <span class="page-title">{{activePage?.name}}</span>
+        <ng-content></ng-content>
+    </div>
+</div>
