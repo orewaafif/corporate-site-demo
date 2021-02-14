@@ -30,15 +30,15 @@ export class PageComponent implements OnInit, AfterViewInit {
   ]
   @Output('onPageClick') pageClick = new EventEmitter<ISideMenu>()
 
-  activePage: ISideMenu
+  activePage: ISideMenu = this.sideMenu[0]
 
   constructor() { }
 
   ngOnInit(): void {
+    this.activePage = this.sideMenu.find(sMenu => sMenu.active) || this.sideMenu[0]
   }
 
   ngAfterViewInit(): void {
-    this.activePage = this.sideMenu.find(sMenu => sMenu.active) || this.sideMenu[0]
   }
 
   pageClickEvt(clickEvt: any, menu: ISideMenu) {
