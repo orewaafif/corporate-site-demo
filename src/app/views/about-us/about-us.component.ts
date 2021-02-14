@@ -44,6 +44,11 @@ export class AboutUsComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       console.log('params: ', params)
+      const { id } = params
+
+      this.sideMenu.map(menu => {
+        if (menu.route === id) menu.active = true
+      })
     })
   }
 
