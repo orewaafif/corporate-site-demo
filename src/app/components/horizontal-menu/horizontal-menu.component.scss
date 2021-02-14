@@ -1,3 +1,27 @@
 :host {
     font-size: 75%;
 }
+
+.menu {
+    background-color: #BB934B;
+    border-radius: 5px;
+}
+
+.menu-md {
+    display: none;
+    color: white;
+    font-weight: bold;
+}
+
+.menu-sm {
+    display: flex;
+}
+
+@media (min-width: 768px) {
+    .menu-md {
+        display: flex;
+    }
+    .menu-sm {
+        display: none;
+    }
+}

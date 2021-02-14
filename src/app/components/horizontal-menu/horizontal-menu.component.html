@@ -1,6 +1,6 @@
-<div class="d-flex shadow-border">
+<div class="menu menu-md shadow-border pt-2 pb-2">
     <ng-container *ngFor="let menu of menus">
-        <div class="p-1 ps-2 pe-2">
+        <div class="ps-2 pe-2">
             {{menu.name}}
         </div>
         <!-- <div class="col-md-1 ml-2">
@@ -9,4 +9,11 @@
             </div>
         </div> -->
     </ng-container>
+</div>
+<div class="menu menu-sm shadow-border pt-2 pb-2 ps-2 pe-2">
+    <select style="width: 100%;">
+        <ng-container *ngFor="let menu of menus">
+            <option>{{menu.name}}</option>
+        </ng-container>
+    </select>
 </div>
