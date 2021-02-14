@@ -4,6 +4,10 @@ import { AboutUsComponent } from './about-us.component';
 
 const routes: Routes = [
   {
+    path: ':id',
+    component: AboutUsComponent
+  },
+  {
     path: '',
     component: AboutUsComponent
   }

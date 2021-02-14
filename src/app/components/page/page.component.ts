@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-page',
@@ -28,6 +28,7 @@ export class PageComponent implements OnInit, AfterViewInit {
       active: false
     },
   ]
+  @Output('onPageClick') pageClick = new EventEmitter<ISideMenu>()
 
   activePage: ISideMenu
 
@@ -40,10 +41,16 @@ export class PageComponent implements OnInit, AfterViewInit {
     this.activePage = this.sideMenu.find(sMenu => sMenu.active) || this.sideMenu[0]
   }
 
+  pageClickEvt(clickEvt: any, menu: ISideMenu) {
+    menu.active = true
+
+    this.activePage = menu
+    this.pageClick.emit(menu)
+  }
 }
 
-interface ISideMenu {
+export interface ISideMenu {
   name: string,
   route: string,
-  active: boolean
+  active?: boolean
 }
