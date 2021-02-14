@@ -1,25 +1,25 @@
-<div class="container d-flex flex-column">
+<div class="container-xl d-flex flex-column">
     <div class="row shadow-border">
-        <div class="offset-8 offset-sm-7 offset-md-6 col-4">
+        <div class="offset-8 col-4 offset-sm-8">
             <a routerLink="/">Home</a> | <a routerLink="/about-us">About Us</a>
         </div>
     </div>
     <div class="row shadow-border">
-        <div class="col-sm-12 col-md-4 shadow-border" style="position: relative; overflow: hidden; height: 160px;">
+        <div class="col-sm-12 col-md-3 shadow-border" style="position: relative; overflow: hidden; height: 14em;">
             <div style="display: flex; align-items: center; height: 100%; position: absolute; left: 0px; width: 100%; justify-content: center;">
                 <img class="mnrb-logo" src="assets/MNRB.png">
             </div>
             
         </div>
-        <div class="col-sm-12 col-md-8 shadow-border">
+        <div class="col-sm-12 col-md-9 shadow-border">
             <div class="row shadow-border">
                 <div class="offset-md-8 col-md-4 offset-0 col-12" style="position: relative;">
                     <button class="btn" style="position: absolute; right: .75rem;"><i class="bi bi-search"></i></button>
                     <input class="form-control" placeholder="Search" type="text">
                 </div>
             </div>
-            <div class="row shadow-border">
-                menu thingy
+            <div class="shadow-border" style="margin: 0em -0.75em;">
+                <app-horizontal-menu></app-horizontal-menu>
             </div>
         </div>
     </div>
