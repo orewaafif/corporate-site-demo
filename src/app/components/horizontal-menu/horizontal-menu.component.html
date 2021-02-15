@@ -7,9 +7,10 @@
     </ng-container>
 </div>
 <div class="menu menu-sm shadow-border p-2">
-    <select style="width: 100%;">
+    <select (change)="onSelectChanged($event)" style="width: 100%;">
+        <option value="">Home</option>
         <ng-container *ngFor="let menu of menus">
-            <option>{{menu.name}}</option>
+            <option [value]="menu.name">{{menu.name}}</option>
         </ng-container>
     </select>
 </div>

@@ -52,6 +52,13 @@ export class HorizontalMenuComponent implements OnInit {
     this.router.navigate(['/' + menu.route])
   }
 
+  onSelectChanged(changeEvt: any) {
+    console.log('changeEvt: ', changeEvt)
+    const value = changeEvt?.target?.value
+
+    this.router.navigate(['/' + value])
+  }
+
 }
 
 export interface IHorizMenu {
