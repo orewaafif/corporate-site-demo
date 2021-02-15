@@ -131,6 +131,7 @@ export class AboutUsComponent implements OnInit {
       this.currRoute = id
       this.sideMenu.map(menu => {
         if (menu.route === id) menu.active = true
+        else menu.active = false
       })
     })
   }
