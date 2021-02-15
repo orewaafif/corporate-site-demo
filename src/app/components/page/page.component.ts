@@ -45,6 +45,10 @@ export class PageComponent implements OnInit, AfterViewInit {
     menu.active = true
 
     this.activePage = menu
+    this.sideMenu.map(sMenu => {
+      if (sMenu.route !== menu.route)
+        sMenu.active = false
+    })
     this.pageClick.emit(menu)
   }
 }

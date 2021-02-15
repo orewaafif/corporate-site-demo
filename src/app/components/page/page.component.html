@@ -1,11 +1,11 @@
 <div class="shadow-border" style="position: relative;">
-    <div style="position: absolute; left: -50vw; z-index: -1; width: 200vw; height: 100%; background-color: #BB934B"></div>
+    <div class="inner-shadow" style="position: absolute; left: -50vw; z-index: -1; width: 200vw; height: 100%; background-color: #BB934B"></div>
     <h2 style="margin-top: 24px; color: white;">{{title}}</h2>
 </div>
 <div class="row shadow-border" style="flex: 1;">
     <div class="col-sm-3 shadow-border d-flex flex-column">
         <ng-container *ngFor="let i of sideMenu">
-            <button (click)="pageClickEvt($event, i)" class="btn btn-light">{{i.name}}</button>
+            <button (click)="pageClickEvt($event, i)" class="btn mt-2 btn-menu" [ngClass]="{'btn-menu-active': i.active}">{{i.name}}</button>
         </ng-container>
     </div>
     <div class="col-sm-9 shadow-border">

@@ -6,7 +6,22 @@
 
 .page-title {
     color: #00928a;
-    margin: 0.5em 0 0.5em 0;
+    margin: 0.5em 0 1em 0;
     line-height: 100%;
     font-size: 26px;
+}
+
+.btn-menu {
+    text-align: left;
+}
+
+.btn-menu:hover, .btn-menu-active {
+    background-color: #BB934B;
+    color: white;
+}
+
+.inner-shadow {
+    -webkit-box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.25);
+    box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.25);
 }
