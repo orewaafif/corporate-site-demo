@@ -8,13 +8,13 @@
     <h2 style="margin-top: 24px; color: white;">{{title}}</h2>
 </div>
 <div class="row shadow-border" style="flex: 1;">
-    <div class="col-sm-4 shadow-border d-flex flex-column">
+    <div class="col-sm-3 shadow-border d-flex flex-column">
         <ng-container *ngFor="let i of sideMenu">
             <button (click)="pageClickEvt($event, i)" class="btn btn-light">{{i.name}}</button>
         </ng-container>
     </div>
-    <div class="col-sm-8 shadow-border">
-        <div class="page-title">{{activePage?.name}}</div>
+    <div class="col-sm-9 shadow-border">
+        <h1 class="page-title">{{activePage?.name}}</h1>
         <ng-content></ng-content>
     </div>
 </div>

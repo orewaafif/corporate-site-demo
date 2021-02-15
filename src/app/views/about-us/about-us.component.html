@@ -8,26 +8,33 @@
 </app-page>
 
 <ng-template #corporateProfile>
-    <span>
-        Malaysian National Reinsurance Berhad, the country's national reinsurer was set up in 1972 to reduce the
-        outflow of reinsurance premiums overseas. The Company commenced operations on 19 February 1973.
-    
-        In 2005, as a result of a restructuring excercise within the MNRB Group, the Company's reinsurance license,
-        business and assets were transferred to its subsidiary company, Malaysian Reinsurance Berhad. Pursuant to the
-        restructuring, Malaysian National Reinsurance Berhad became an investment holding company and changed its name
-        to MNRB Holdings Berhad (MNRB). Today, MNRB is listed on the Bursa Malaysia.
-    
-        The MNRB Group comprises leading wholesale providers of reinsurance and retakaful as well as two takaful
-        operators. Its reinsurance subsidiary stands tall among the top reinsurers in the region, writing lines of
-        general businesses locally and abroad. In Malaysia, its takaful operators vie among the leaders in the provision
-        of financial protection services based on the takaful system.
-    </span>
+    <img style="margin: 0px 10px 10px 0px; width: 306px; height: 220px; float: left;" src="assets/about-us/img-corp-profile-mnrb1.jpg">
+    <div>
+Malaysian National Reinsurance Berhad, the country's national reinsurer was set up in 1972 to reduce the
+outflow of reinsurance premiums overseas. The Company commenced operations on 19 February 1973.
+<br><br>
+In 2005, as a result of a restructuring excercise within the MNRB Group, the Company's reinsurance license,
+business and assets were transferred to its subsidiary company, Malaysian Reinsurance Berhad. Pursuant to the
+restructuring, Malaysian National Reinsurance Berhad became an investment holding company and changed its name
+to MNRB Holdings Berhad (MNRB). Today, MNRB is listed on the Bursa Malaysia.
+<br><br>
+The MNRB Group comprises leading wholesale providers of reinsurance and retakaful as well as two takaful
+operators. Its reinsurance subsidiary stands tall among the top reinsurers in the region, writing lines of
+general businesses locally and abroad. In Malaysia, its takaful operators vie among the leaders in the provision
+of financial protection services based on the takaful system.
+    </div>
 </ng-template>
 
 <ng-template #visualCoreValues>
     <!-- <ng-container *ngIf="currRoute === 'vision-core-values'"> -->
     <ng-container *ngIf="currRoute === enumRoutes.visualCoreValues; else boardDirectors">
-        visualcorevalues
+        <h3>Vision</h3>
+        <p>We Protect Everyone</p>
+        <p>&nbsp;</p>
+        <h3>Core Values</h3>
+        <p>Integrity</p>
+        <p>Collaboration</p>
+        <p>Expertise</p>
     </ng-container>
 </ng-template>
 
@@ -39,7 +46,55 @@
 
 <ng-template #codeOfConduct>
     <ng-container *ngIf="currRoute === enumRoutes.codeOfConduct; else managementTeam">
-        codeOfConduct
+        <pre style="font-family: Arial, Helvetica, sans-serif">
+The following Code of Conduct shall be strictly adhered to by all Officers of MNRB Holdings Berhad. All
+Officers are to ensure that their conduct complies with the spirit of this Code.
+
+1. <strong>Basic Principle</strong>
+An Officer should conform strictly to the laws and regulations of Malaysia, as well as to accepted standards
+of business ethics, both locally and overseas, including those set out in this Code.
+
+2. <strong>Conflict of Interest</strong>
+To avoid possible conflicts of interest and / or being imposed with a situation where an interest, benefit
+or right due to the Company has to be compromised, an Officer may not either directly or indirectly become
+involved in any venture, business or dealing either on their own or in partnership or with some other person
+or persons, unless prior written approval has been obtained from the President & Group CEO.
+
+3. <strong>Illegal Gratification and Corrupt Practices</strong>
+
+    a. Solicitation and / or Acceptances of Corrupt Payments
+
+        An Officer shall not solicit or accept gratification of any kind, be it in cash, gift or favour, either
+        directly or indirectly or through another person or from any enterprise, in return for doing anything or
+        refraining from doing anything relating to a business transaction between his principal and the enterprise.
+
+    b. Making Corrupt Payments
+
+        An Officer shall not offer, give or promise any gratification of any kind, directly or indirectly, to any
+        employee of an enterprise or agent thereof as a means of persuading that person to do or refrain from doing
+        anything relating to a business transaction between his principal and the enterprise. In particular, this
+        prohibition applies to dealings with Government Departments, Statutory Bodies and Agencies.
+
+    c. Commissions
+
+        An Officer is not permitted to accept or pay commissions, or percentage of a commission as part of any
+        payment arising from a commercial transaction other than to those legally entitled to such amounts.
+
+4. <strong>Gifts</strong>
+    It is appreciated that it is a common practice in Malaysia for firms having dealings with a company to send
+    employees of that company gifts at festival times and at different occasions. This practice is not forbidden
+    but such must be restricted to gifts of consumable goods (foods and drinks), flowers and other items of
+    nominal value. The receipt of any other kind of gifts, directly or indirectly or the payment of bills
+    incurred by an executive, by an enterprise having a business transaction, or any agent or any employee of
+    such an enterprise, is strictly forbidden. If such gifts are offered, they must be refused on the grounds
+    that they contravene Company regulations. It is the responsibility of an Officer to obtain permission from
+    his Head of Division if he is in doubt as to whether a gift can be accepted due to its value.
+
+5. <strong>Entertainment</strong>
+    The entertainment of an Officer by a person or enterprise having a business transaction with the Company
+    should be restricted to within reasonable bounds. Lavish entertainment which could influence an Officer in
+    the performance of his duties is strictly forbidden.
+        </pre>
     </ng-container>
 </ng-template>
 
@@ -50,6 +105,5 @@
 </ng-template>
 
 <ng-template #corporateStructure>
-    corporateStructure
+    <img style="width: 100%;" src="assets/about-us/mnrb_corp_structure_tifb_1212.jpg">
 </ng-template>
-
