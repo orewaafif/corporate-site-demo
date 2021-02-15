@@ -1,7 +1,7 @@
 {
   "name": "corporate-site-demo",
   "short_name": "corporate-site-demo",
-  "theme_color": "#1976d2",
+  "theme_color": "#008782",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
