@@ -8,9 +8,9 @@
 </div>
 <div class="menu menu-sm shadow-border p-2">
     <select (change)="onSelectChanged($event)" style="width: 100%;">
-        <option value="">Home</option>
+        <option [selected]="currRoute === '/'" value="/">Home</option>
         <ng-container *ngFor="let menu of menus">
-            <option [value]="menu.name">{{menu.name}}</option>
+            <option *ngIf="menu.route === 'about-us'" [selected]="currRoute.includes(menu.route)" [value]="menu.route">{{menu.name}}</option>
         </ng-container>
     </select>
 </div>

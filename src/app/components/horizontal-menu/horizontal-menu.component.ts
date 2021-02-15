@@ -1,12 +1,15 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { HorizontalMenuService } from '../horizontal-menu.service';
 
 @Component({
   selector: 'app-horizontal-menu',
   templateUrl: './horizontal-menu.component.html',
   styleUrls: ['./horizontal-menu.component.scss']
 })
-export class HorizontalMenuComponent implements OnInit {
+export class HorizontalMenuComponent implements OnInit, OnDestroy {
 
   @Input('menus') menus: IHorizMenu[] = [
     {
@@ -41,11 +44,24 @@ export class HorizontalMenuComponent implements OnInit {
     },
   ]
 
+  currRoute = ''
+  
+  unsub$ = new Subject<any>()
+
   constructor(
-    private router: Router
+    private router: Router,
+    private horizMenuService: HorizontalMenuService
   ) { }
 
   ngOnInit(): void {
+    this.horizMenuService.currRoute$.pipe(takeUntil(this.unsub$.asObservable())).subscribe(url => {
+      this.currRoute = url
+    })
+  }
+
+  ngOnDestroy(): void {
+    this.unsub$.next()
+    this.unsub$.unsubscribe()
   }
 
   onMenuClicked(clickEvt: any, menu: IHorizMenu) {
@@ -53,7 +69,6 @@ export class HorizontalMenuComponent implements OnInit {
   }
 
   onSelectChanged(changeEvt: any) {
-    console.log('changeEvt: ', changeEvt)
     const value = changeEvt?.target?.value
 
     this.router.navigate(['/' + value])
