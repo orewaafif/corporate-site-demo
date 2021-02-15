@@ -3,6 +3,11 @@
     width: 100%;
 }
 
+a {
+    text-decoration: none;
+    color: #008782;
+}
+
 .mnrb-logo {
     @media (max-width: 767px) {
         width: auto;
