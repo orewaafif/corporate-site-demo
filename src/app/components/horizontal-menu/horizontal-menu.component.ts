@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-horizontal-menu',
@@ -40,9 +41,15 @@ export class HorizontalMenuComponent implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  onMenuClicked(clickEvt: any, menu: IHorizMenu) {
+    this.router.navigate(['/' + menu.route])
   }
 
 }

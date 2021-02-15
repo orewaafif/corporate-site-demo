@@ -25,3 +25,18 @@
         display: none;
     }
 }
+
+.horiz-btn {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    color: white;
+}
+
+.btn-menu {
+    cursor: pointer;
+}
+
+.btn-menu-disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
