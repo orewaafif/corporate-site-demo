@@ -1,0 +1,21 @@
+:host {
+    width: 250px;
+    height: 183px;
+    position: relative;
+    margin: 0.5em;
+}
+
+.img-container {
+    height: 183px;
+    overflow: hidden;
+    text-align: center;
+    transition: height 0.25s;
+}
+
+.img-container:hover {
+    transition: height 0.25s;
+    left: 0px;
+    z-index: 1;
+    position: absolute;
+    height: 365px;
+}

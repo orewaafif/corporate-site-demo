@@ -45,6 +45,84 @@ export class AboutUsComponent implements OnInit {
     }
   ]
 
+  directors: { name: string, imgUrl: string }[] = [
+    {
+      name: '',
+      imgUrl: 'datowan1.jpg',
+    },
+    {
+      name: '',
+      imgUrl: 'datukjohar-chairman.jpg',
+    },
+    {
+      name: '',
+      imgUrl: 'george2.jpg',
+    },
+    {
+      name: '',
+      imgUrl: 'junaidah2019a.jpg',
+    },
+    {
+      name: '',
+      imgUrl: 'khalid2019a.jpg',
+    },
+    {
+      name: '',
+      imgUrl: 'zaida2019a.jpg',
+    }
+  ]
+
+  managements: { name: string, imgUrl: string}[] = [
+    {
+      name: '',
+      imgUrl: 'akhter_0.png'
+    },
+    {
+      name: '',
+      imgUrl: 'azman2021g.jpg'
+    },
+    {
+      name: '',
+      imgUrl: 'eddy2021f.jpg'
+    },
+    {
+      name: '',
+      imgUrl: 'haniza.jpg'
+    },
+    {
+      name: '',
+      imgUrl: 'hcm2_2.jpg'
+    },
+    {
+      name: '',
+      imgUrl: 'norazman.jpg'
+    },
+    {
+      name: '',
+      imgUrl: 'pgceo_0.jpg'
+    },
+    {
+      name: '',
+      imgUrl: 'rizalzin2.jpg'
+    },
+    {
+      name: '',
+      imgUrl: 'senior-lena_0.png'
+    },
+    {
+      name: '',
+      imgUrl: 'tungcheelim2b.jpg'
+    },
+    {
+      name: '',
+      imgUrl: 'zainudin2021_0.jpg'
+    },
+    {
+      name: '',
+      imgUrl: 'zura_0.jpg'
+    }
+  ]
+
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       console.log('params: ', params)

@@ -8,20 +8,21 @@
 </app-page>
 
 <ng-template #corporateProfile>
-    <img style="margin: 0px 10px 10px 0px; width: 306px; height: 220px; float: left;" src="assets/about-us/img-corp-profile-mnrb1.jpg">
+    <img style="margin: 0px 10px 10px 0px; width: 306px; height: 220px; float: left;"
+        src="assets/about-us/img-corp-profile-mnrb1.jpg">
     <div>
-Malaysian National Reinsurance Berhad, the country's national reinsurer was set up in 1972 to reduce the
-outflow of reinsurance premiums overseas. The Company commenced operations on 19 February 1973.
-<br><br>
-In 2005, as a result of a restructuring excercise within the MNRB Group, the Company's reinsurance license,
-business and assets were transferred to its subsidiary company, Malaysian Reinsurance Berhad. Pursuant to the
-restructuring, Malaysian National Reinsurance Berhad became an investment holding company and changed its name
-to MNRB Holdings Berhad (MNRB). Today, MNRB is listed on the Bursa Malaysia.
-<br><br>
-The MNRB Group comprises leading wholesale providers of reinsurance and retakaful as well as two takaful
-operators. Its reinsurance subsidiary stands tall among the top reinsurers in the region, writing lines of
-general businesses locally and abroad. In Malaysia, its takaful operators vie among the leaders in the provision
-of financial protection services based on the takaful system.
+        Malaysian National Reinsurance Berhad, the country's national reinsurer was set up in 1972 to reduce the
+        outflow of reinsurance premiums overseas. The Company commenced operations on 19 February 1973.
+        <br><br>
+        In 2005, as a result of a restructuring excercise within the MNRB Group, the Company's reinsurance license,
+        business and assets were transferred to its subsidiary company, Malaysian Reinsurance Berhad. Pursuant to the
+        restructuring, Malaysian National Reinsurance Berhad became an investment holding company and changed its name
+        to MNRB Holdings Berhad (MNRB). Today, MNRB is listed on the Bursa Malaysia.
+        <br><br>
+        The MNRB Group comprises leading wholesale providers of reinsurance and retakaful as well as two takaful
+        operators. Its reinsurance subsidiary stands tall among the top reinsurers in the region, writing lines of
+        general businesses locally and abroad. In Malaysia, its takaful operators vie among the leaders in the provision
+        of financial protection services based on the takaful system.
     </div>
 </ng-template>
 
@@ -39,7 +40,11 @@ of financial protection services based on the takaful system.
 
 <ng-template #boardDirectors>
     <ng-container *ngIf="currRoute === enumRoutes.boardDirectors; else codeOfConduct">
-        boardDirectors
+        <div class="d-flex flex-wrap justify-content-center">
+            <ng-container *ngFor="let director of directors">
+                <app-profile [src]="'assets/profiles/directors/' + director.imgUrl"></app-profile>
+            </ng-container>
+        </div>
     </ng-container>
 </ng-template>
 
@@ -99,7 +104,11 @@ or persons, unless prior written approval has been obtained from the President &
 
 <ng-template #managementTeam>
     <ng-container *ngIf="currRoute === enumRoutes.managementTeam; else corporateStructure">
-        managementTeam
+        <div class="d-flex flex-wrap justify-content-center">
+            <ng-container *ngFor="let manage of managements">
+                <app-profile [src]="'assets/profiles/management-team/' + manage.imgUrl"></app-profile>
+            </ng-container>
+        </div>
     </ng-container>
 </ng-template>
 
