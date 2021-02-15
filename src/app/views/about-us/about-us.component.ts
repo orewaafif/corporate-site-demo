@@ -14,6 +14,10 @@ export class AboutUsComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
+  enumRoutes = Routes
+
+  currRoute: '' | 'corporate-profile' | 'vision-core-values' | 'board-directors' | 'code-of-conduct' | 'management-team' | 'corporate-structure' = Routes.corporateProfile
+
   sideMenu: ISideMenu[] = [
     {
       name: 'Corporate Profile',
@@ -46,6 +50,7 @@ export class AboutUsComponent implements OnInit {
       console.log('params: ', params)
       const { id } = params
 
+      this.currRoute = id
       this.sideMenu.map(menu => {
         if (menu.route === id) menu.active = true
       })
@@ -55,5 +60,13 @@ export class AboutUsComponent implements OnInit {
   async pageClickedEvt(menuClicked: ISideMenu) {
     await this.router.navigate(['about-us', menuClicked.route])
   }
+}
 
+enum Routes {
+  corporateProfile = 'corporate-profile',
+  visualCoreValues = 'vision-core-values',
+  boardDirectors = 'board-directors',
+  codeOfConduct = 'code-of-conduct',
+  managementTeam = 'management-team',
+  corporateStructure = 'corporate-structure'
 }

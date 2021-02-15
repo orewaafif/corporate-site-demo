@@ -9,7 +9,8 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: AboutUsComponent
+    pathMatch: 'full',
+    redirectTo: 'corporate-profile'
   }
 ];
 

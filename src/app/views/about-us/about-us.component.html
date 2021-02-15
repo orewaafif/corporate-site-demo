@@ -2,12 +2,54 @@
     about us owrks?
 </div> -->
 <app-page [title]="'About Us'" [sideMenu]="sideMenu" (onPageClick)="pageClickedEvt($event)">
-    <span>Malaysian National Reinsurance Berhad, the country's national reinsurer was set up in 1972 to reduce the outflow of reinsurance premiums overseas. The Company commenced operations on 19 February 1973.
-
-        In 2005, as a result of a restructuring excercise within the MNRB Group, the Company's reinsurance license, business and assets were transferred to its subsidiary company, Malaysian Reinsurance Berhad. Pursuant to the restructuring, Malaysian National Reinsurance Berhad became an investment holding company and changed its name to MNRB Holdings Berhad (MNRB). Today, MNRB is listed on the Bursa Malaysia.
-        
-        The MNRB Group comprises leading wholesale providers of reinsurance and retakaful as well as two takaful operators. Its reinsurance subsidiary stands tall among the top reinsurers in the region, writing lines of general businesses locally and abroad. In Malaysia, its takaful operators vie among the leaders in the provision of financial protection services based on the takaful system.
-        
-        </span>
+    <ng-container *ngIf="currRoute === 'corporate-profile'; else visualCoreValues">
+        <ng-container *ngTemplateOutlet="corporateProfile"></ng-container>
+    </ng-container>
 </app-page>
+
+<ng-template #corporateProfile>
+    <span>
+        Malaysian National Reinsurance Berhad, the country's national reinsurer was set up in 1972 to reduce the
+        outflow of reinsurance premiums overseas. The Company commenced operations on 19 February 1973.
+    
+        In 2005, as a result of a restructuring excercise within the MNRB Group, the Company's reinsurance license,
+        business and assets were transferred to its subsidiary company, Malaysian Reinsurance Berhad. Pursuant to the
+        restructuring, Malaysian National Reinsurance Berhad became an investment holding company and changed its name
+        to MNRB Holdings Berhad (MNRB). Today, MNRB is listed on the Bursa Malaysia.
+    
+        The MNRB Group comprises leading wholesale providers of reinsurance and retakaful as well as two takaful
+        operators. Its reinsurance subsidiary stands tall among the top reinsurers in the region, writing lines of
+        general businesses locally and abroad. In Malaysia, its takaful operators vie among the leaders in the provision
+        of financial protection services based on the takaful system.
+    </span>
+</ng-template>
+
+<ng-template #visualCoreValues>
+    <!-- <ng-container *ngIf="currRoute === 'vision-core-values'"> -->
+    <ng-container *ngIf="currRoute === enumRoutes.visualCoreValues; else boardDirectors">
+        visualcorevalues
+    </ng-container>
+</ng-template>
+
+<ng-template #boardDirectors>
+    <ng-container *ngIf="currRoute === enumRoutes.boardDirectors; else codeOfConduct">
+        boardDirectors
+    </ng-container>
+</ng-template>
+
+<ng-template #codeOfConduct>
+    <ng-container *ngIf="currRoute === enumRoutes.codeOfConduct; else managementTeam">
+        codeOfConduct
+    </ng-container>
+</ng-template>
+
+<ng-template #managementTeam>
+    <ng-container *ngIf="currRoute === enumRoutes.managementTeam; else corporateStructure">
+        managementTeam
+    </ng-container>
+</ng-template>
+
+<ng-template #corporateStructure>
+    corporateStructure
+</ng-template>
 
